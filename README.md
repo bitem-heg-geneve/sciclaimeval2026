@@ -11,12 +11,14 @@ the exact command and the official score.
 
 | Run | Subtask | Method | Official test | Published here |
 |---|---|---|--:|---|
-| `SIBTM_T1_R01` | 1 — Claim Label Prediction | Qwen3-VL-32B-Instruct, custom `rec4` prompt, greedy | Acc **81.1** / Pair **64.1** | [`runs/SIBTM_T1_R01`](runs/SIBTM_T1_R01) |
-| `SIBTM_T2_R01` | 2 — Claim Evidence Prediction | per-image verifier → joint tie-break cascade | Acc **90.5** | [`runs/SIBTM_T2_R01`](runs/SIBTM_T2_R01) |
-| `SIBTM_T2_R02` | 2 | baseline Qwen3-VL-32B, no adaptation | Acc 65.3 | not published |
-| `SIBTM_T2_R03` | 2 | Qwen3-VL-32B + QLoRA fine-tuning | Acc 72.2 | not published |
-| `SIBTM_T2_R04` | 2 | Qwen3-VL decider + chart/table advisors | Acc 80.1 | not published |
-| `SIBTM_T2_R05` | 2 | R03 weights + step-by-step reasoning prompt | Acc 80.8 | not published |
+| `SIBTM_T1_R01` | 1 - Claim Label Prediction | Qwen3-VL-32B-Instruct, custom `rec4` prompt, greedy | Acc **81.3** / Pair **64.1** | [`runs/SIBTM_T1_R01`](runs/SIBTM_T1_R01) |
+| `SIBTM_T1_R02` | 1 - Claim Label Prediction | Baseline Qwen3-VL-32B, no adaptation | Acc 78.3 / Pair 58.3 | [`runs/SIBTM_T1_R02`](https://github.com/mottinl/ntcir2026/tree/main/pipeline_baseline) |
+| `SIBTM_T2_R03` | 1 - Claim Label Prediction | Qwen3-VL-32B + QLoRA fine-tuning | Acc 80.0 / Pair 62.0 | [`runs/SIBTM_T1_R03`](https://github.com/mottinl/ntcir2026/tree/main/pipeline_baseline) |
+| `SIBTM_T2_R01` | 2 - Claim Evidence Prediction | Per-image verifier → joint tie-break cascade | Acc **90.5** | [`runs/SIBTM_T2_R01`](runs/SIBTM_T2_R01) |
+| `SIBTM_T2_R02` | 2 - Claim Evidence Prediction | Baseline Qwen3-VL-32B, no adaptation | Acc 65.3 | [`runs/SIBTM_T2_R02`](https://github.com/mottinl/ntcir2026/tree/main/pipeline_baseline) |
+| `SIBTM_T2_R03` | 2 - Claim Evidence Prediction | Qwen3-VL-32B + QLoRA fine-tuning | Acc 72.2 | [`runs/SIBTM_T2_R03`](https://github.com/mottinl/ntcir2026/tree/main/pipeline_sibils) |
+| `SIBTM_T2_R04` | 2 - Claim Evidence Prediction | Qwen3-VL-32B decider + chart/table advisors | Acc 80.1 | [`runs/SIBTM_T2_R04`](https://github.com/mottinl/ntcir2026/tree/main/pipeline_advisors) |
+| `SIBTM_T2_R05` | 2 - Claim Evidence Prediction | SIBTM_T2_R03 weights + step-by-step reasoning prompt | Acc 80.8 | [`runs/SIBTM_T2_R05`](https://github.com/mottinl/ntcir2026/tree/main/pipeline_sibils) |
 
 `SIBTM_T1_R01` and `SIBTM_T2_R01` are the team's best run in each subtask.
 
