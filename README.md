@@ -9,9 +9,8 @@ with the method, the exact command and the official score.
 
 ## Runs
 
-Eight official runs: three for Subtask 1, five for Subtask 2. The team's best run in each
-subtask, `SIBTM_T1_R01` and `SIBTM_T2_R01`, is published here. The other six come from the
-model-adaptation line and are published in
+Eight official runs: three for Subtask 1, five for Subtask 2. The Code column links each run
+to its code, either in this repository or in
 [mottinl/ntcir2026](https://github.com/mottinl/ntcir2026).
 
 ### Task 1 - Claim Label Prediction
