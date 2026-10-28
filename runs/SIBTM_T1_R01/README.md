@@ -32,6 +32,27 @@ uv run runs/SIBTM_T1_R01/task1_standalone.py --split test --limit 8   # smoke te
 Writes `submissions/subtask1_<split>.json` (official format) next to the script, plus a
 `.raw.jsonl` sidecar with the full model output per claim.
 
+## Prompt history
+
+[`prompt_history.py`](prompt_history.py) is meant to be read, top to bottom, on GitHub: it
+holds, verbatim, every Subtask-1 prompt evaluated on the dev split on the way to this run,
+from the first JSON prompt through SciVer's chain-of-thought prompt (`baseline`) to `rec4`
+and the rejected `rec5`, plus the side experiments (abstention, table injection, crop and
+zoom, a tie-break score). It does not cover SIBTM_T1_R02 and SIBTM_T1_R03, which come from a
+separate pipeline. Its opening docstring has the results table, the story in brief and how the
+prompt text evolved; then each step gives why it was written, what changed from its parent,
+what it scored and what we kept, followed by the prompt itself. Search `# STEP rec4 ` for the
+submitted prompt.
+
+Running it is optional (standard library only):
+
+```bash
+uv run runs/SIBTM_T1_R01/prompt_history.py                  # lineage table
+uv run runs/SIBTM_T1_R01/prompt_history.py show rec4        # one step, prompt included
+uv run runs/SIBTM_T1_R01/prompt_history.py diff rec2 rec4   # sentence-level diff of two prompts
+uv run runs/SIBTM_T1_R01/prompt_history.py check            # prompt hashes; rec4 == the runner's
+```
+
 ## Artifact
 
 `submissions/subtask1_test.json` — the file submitted to the organizers.
