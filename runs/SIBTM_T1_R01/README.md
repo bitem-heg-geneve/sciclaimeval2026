@@ -32,6 +32,25 @@ uv run runs/SIBTM_T1_R01/task1_standalone.py --split test --limit 8   # smoke te
 Writes `submissions/subtask1_<split>.json` (official format) next to the script, plus a
 `.raw.jsonl` sidecar with the full model output per claim.
 
+## Prompt history
+
+`prompt_history.py` holds, verbatim, every Subtask-1 claim-verification prompt that the
+inference-time line behind this run evaluated on the dev split, plus the localisation and
+tie-break-score prompts of two side experiments. The adaptation line behind SIBTM_T1_R02
+and SIBTM_T1_R03 is outside it. Each prompt records what changed from its parent (where
+it has one), the error analysis or goal that motivated it, and what it scored. The main line runs from the first JSON prompt through
+SciVer's chain-of-thought prompt (`baseline`) to `rec1` → `rec2` → `rec4`, with `rec3`
+and `rec5` as rejected steps. The NEI, table-injection, localisation/crop, highlight and
+confidence-score experiments are recorded as side branches. Only the standard library is
+needed:
+
+```bash
+uv run runs/SIBTM_T1_R01/prompt_history.py                  # lineage table
+uv run runs/SIBTM_T1_R01/prompt_history.py show rec4        # why / changes / result / full text
+uv run runs/SIBTM_T1_R01/prompt_history.py diff rec2 rec4   # sentence-level diff of two prompts
+uv run runs/SIBTM_T1_R01/prompt_history.py check            # rec4 here == the one task1_standalone.py runs
+```
+
 ## Artifact
 
 `submissions/subtask1_test.json` — the file submitted to the organizers.
