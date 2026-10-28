@@ -38,8 +38,8 @@ Writes `submissions/subtask1_<split>.json` (official format) next to the script,
 holds, verbatim, every Subtask-1 prompt evaluated on the dev split on the way to this run,
 from the first JSON prompt through SciVer's chain-of-thought prompt (`baseline`) to `rec4`
 and the rejected `rec5`, plus the side experiments (abstention, table injection, crop and
-zoom, a tie-break score). The team's other Subtask-1 runs (SIBTM_T1_R02, SIBTM_T1_R03) are
-outside it. Its opening docstring has the results table, the story in brief and how the
+zoom, a tie-break score). It does not cover SIBTM_T1_R02 and SIBTM_T1_R03, which come from a
+separate pipeline. Its opening docstring has the results table, the story in brief and how the
 prompt text evolved; then each step gives why it was written, what changed from its parent,
 what it scored and what we kept, followed by the prompt itself. Search `# STEP rec4 ` for the
 submitted prompt.

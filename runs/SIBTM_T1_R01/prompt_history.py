@@ -161,9 +161,10 @@ READING THE PROMPT TEXTS
     SHA-256 hashes recorded at the end of this file.
 
 NOT IN THIS FILE
-  - The team's other Subtask-1 runs, from its adaptation line (github.com/mottinl/ntcir2026):
-    SIBTM_T1_R02, the un-adapted Qwen3-VL-32B control, and SIBTM_T1_R03, QLoRA fine-tuning.
-    Also the Subtask-2 two-image prompts (see runs/SIBTM_T2_R01/task2_standalone.py).
+  - SIBTM_T1_R02 (the un-adapted Qwen3-VL-32B control) and SIBTM_T1_R03 (QLoRA fine-tuning).
+    They come from a separate pipeline, the model-adaptation line, documented in
+    github.com/mottinl/ntcir2026. Also the Subtask-2 two-image prompts (see
+    runs/SIBTM_T2_R01/task2_standalone.py).
   - Experiments that changed the model, quantization, decoding, image resolution or serving
     stack but not the prompt (bf16 vs W8A16, max_pixels, a Thinking model, vLLM 0.24), except
     where a prompt comparison needs them (8B vs 32B, the 30B-A3B runs, the table re-render
