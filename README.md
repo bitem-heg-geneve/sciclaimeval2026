@@ -3,24 +3,34 @@
 Code and submitted artifacts for the **SIB Text Mining** runs in the
 [NTCIR-19 SciClaimEval](https://sciclaimeval.github.io/) shared task (PNG evidence track).
 
-One directory per official run ID under `runs/`. Each directory is self-contained: the
-single-file runner that produced the run, the submitted JSON, and a README with the method,
-the exact command and the official score.
+Runs published here have one directory per official run ID under `runs/`. Each directory is
+self-contained: the single-file runner that produced the run, the submitted JSON, and a README
+with the method, the exact command and the official score.
 
 ## Runs
 
-| Run | Subtask | Method | Official test | Published here |
-|---|---|---|--:|---|
-| `SIBTM_T1_R01` | 1 - Claim Label Prediction | Qwen3-VL-32B-Instruct, custom `rec4` prompt, greedy | Acc **81.3** / Pair **64.1** | [`runs/SIBTM_T1_R01`](runs/SIBTM_T1_R01) |
-| `SIBTM_T1_R02` | 1 - Claim Label Prediction | Baseline Qwen3-VL-32B, no adaptation | Acc 78.3 / Pair 58.3 | [`runs/SIBTM_T1_R02`](https://github.com/mottinl/ntcir2026/tree/main/pipeline_baseline) |
-| `SIBTM_T2_R03` | 1 - Claim Label Prediction | Qwen3-VL-32B + QLoRA fine-tuning | Acc 80.0 / Pair 62.0 | [`runs/SIBTM_T1_R03`](https://github.com/mottinl/ntcir2026/tree/main/pipeline_baseline) |
-| `SIBTM_T2_R01` | 2 - Claim Evidence Prediction | Per-image verifier → joint tie-break cascade | Acc **90.5** | [`runs/SIBTM_T2_R01`](runs/SIBTM_T2_R01) |
-| `SIBTM_T2_R02` | 2 - Claim Evidence Prediction | Baseline Qwen3-VL-32B, no adaptation | Acc 65.3 | [`runs/SIBTM_T2_R02`](https://github.com/mottinl/ntcir2026/tree/main/pipeline_baseline) |
-| `SIBTM_T2_R03` | 2 - Claim Evidence Prediction | Qwen3-VL-32B + QLoRA fine-tuning | Acc 72.2 | [`runs/SIBTM_T2_R03`](https://github.com/mottinl/ntcir2026/tree/main/pipeline_sibils) |
-| `SIBTM_T2_R04` | 2 - Claim Evidence Prediction | Qwen3-VL-32B decider + chart/table advisors | Acc 80.1 | [`runs/SIBTM_T2_R04`](https://github.com/mottinl/ntcir2026/tree/main/pipeline_advisors) |
-| `SIBTM_T2_R05` | 2 - Claim Evidence Prediction | SIBTM_T2_R03 weights + step-by-step reasoning prompt | Acc 80.8 | [`runs/SIBTM_T2_R05`](https://github.com/mottinl/ntcir2026/tree/main/pipeline_sibils) |
+Eight official runs: three for Subtask 1, five for Subtask 2. The team's best run in each
+subtask, `SIBTM_T1_R01` and `SIBTM_T2_R01`, is published here. The other six come from the
+model-adaptation line and are published in
+[mottinl/ntcir2026](https://github.com/mottinl/ntcir2026).
 
-`SIBTM_T1_R01` and `SIBTM_T2_R01` are the team's best run in each subtask.
+### Task 1 - Claim Label Prediction
+
+| Run | Method | Official test | Code |
+|---|---|--:|---|
+| `SIBTM_T1_R01` | Qwen3-VL-32B-Instruct, custom `rec4` prompt, greedy | Acc **81.1** / Pair **64.1** | [`runs/SIBTM_T1_R01`](runs/SIBTM_T1_R01) |
+| `SIBTM_T1_R02` | Baseline Qwen3-VL-32B, no adaptation | Acc 77.9 / Pair 58.3 | [ntcir2026 · `pipeline_baseline`](https://github.com/mottinl/ntcir2026/tree/main/pipeline_baseline) |
+| `SIBTM_T1_R03` | Qwen3-VL-32B + QLoRA fine-tuning | Acc 79.7 / Pair 62.0 | [ntcir2026 · `pipeline_sibils`](https://github.com/mottinl/ntcir2026/tree/main/pipeline_sibils) |
+
+### Task 2 - Claim Evidence Prediction
+
+| Run | Method | Official test | Code |
+|---|---|--:|---|
+| `SIBTM_T2_R01` | Per-image verifier → joint tie-break cascade | Acc **90.5** | [`runs/SIBTM_T2_R01`](runs/SIBTM_T2_R01) |
+| `SIBTM_T2_R02` | Baseline Qwen3-VL-32B, no adaptation | Acc 65.3 | [ntcir2026 · `pipeline_baseline`](https://github.com/mottinl/ntcir2026/tree/main/pipeline_baseline) |
+| `SIBTM_T2_R03` | Qwen3-VL-32B + QLoRA fine-tuning | Acc 72.2 | [ntcir2026 · `pipeline_sibils`](https://github.com/mottinl/ntcir2026/tree/main/pipeline_sibils) |
+| `SIBTM_T2_R04` | Qwen3-VL-32B decider + chart/table advisors | Acc 80.1 | [ntcir2026 · `pipeline_advisors`](https://github.com/mottinl/ntcir2026/tree/main/pipeline_advisors) |
+| `SIBTM_T2_R05` | `SIBTM_T2_R03` weights + step-by-step reasoning prompt | Acc 80.8 | [ntcir2026 · `pipeline_sibils`](https://github.com/mottinl/ntcir2026/tree/main/pipeline_sibils) |
 
 ## Running a run
 
