@@ -26,6 +26,10 @@ primitive. One vLLM session, three phases:
 The prompts are blind: they never mention how the twin-image pairs were constructed, and the
 dataset's `operation` field is never fetched.
 
+## Requirements
+
+Same as [SIBTM_T1_R01](../SIBTM_T1_R01/README.md#requirements).
+
 ## Run it
 
 ```bash
@@ -50,5 +54,9 @@ is kept independently runnable.
 ```
 sha256  54209a1112f86af0193891152e40103647af5d66f0d50e53594086508e2ebb5f
 ```
+
+A rerun reproduces the submitted configuration, not necessarily every label: greedy decoding
+in a fresh vLLM session is not bit-for-bit deterministic. This committed file is the exact
+submitted one, and `--split test` overwrites it unless you pass `--output`.
 
 Environment and pins: see `REPRODUCIBILITY_MANIFEST` in `task1_standalone.py`.
